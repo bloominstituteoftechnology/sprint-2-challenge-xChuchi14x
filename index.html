@@ -115,21 +115,24 @@
     }
 
     // 👉 CHALLENGE 2
-    function mineSweeper(gird, x, y) {
-      if (x < 1 || x > 3 || y < 1 || y > 3) {
-        return "invalid coordinates";
-      }
+    function mineSweeper(grid, x, y ) {
+      const rowIndex = y - 1;
+      const colIndex = x - 1;
+    if (rowIndex < 0 || rowIndex >= grid.lenght || colIndex < 0 || colIndex >= grid[0].lenght ) {
+      return "invalid coordinates";
+    }
+     
+     const  square = grid[rowIndex][colIndex];
 
-      x--;
-      y--;
-
-      if (grid[y][x] === "🟥") {
-        return "🟥 💀";
-      } else if (grid[y][x] === "🟦") {
-        return "🟦 🥳"; 
-      } else {
-        return "invalid square";
-      }
+     if (square === "🟥"){
+      return "🟥 💀";
+     } else if (square === "🟦" ){
+      return "🟦 🥳";
+     } else {
+      return "invalid square value";
+     }
+    } 
+      
       
       // 🧠 mineSweeper takes a grid as its first argument, and coordinates x and y as the second and third args
       //  The grid is an array of arrays in the following format: [["🟥","🟦","🟥"],["🟦","🟥","🟥"],["🟥","🟦","🟦"]]
@@ -149,7 +152,7 @@
       //    * If the player lands on blue, return the string "🟦 🥳"
       // 🧠 Edge cases:
       //    * If the x or y coordinates are under 1 or over 3, return the string "invalid coordinates"
-    }
+    
 
     // 👉 CHALLENGE 3
     function booleanize(obj) {

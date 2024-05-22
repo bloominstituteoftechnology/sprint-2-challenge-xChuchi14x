@@ -118,7 +118,7 @@
     function mineSweeper(grid, x, y ) {
       const rowIndex = y - 1;
       const colIndex = x - 1;
-    if (rowIndex < 0 || rowIndex >= grid.lenght || colIndex < 0 || colIndex >= grid[0].lenght ) {
+    if (rowIndex < 1 || rowIndex >= grid.lenght || colIndex < 1 || colIndex >= grid[0].lenght ) {
       return "invalid coordinates";
     }
      
